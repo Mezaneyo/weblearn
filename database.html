@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Tutorial - DevLearn</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/database.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">💻</span>
+                <span>DevLearn</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="html.html">HTML</a></li>
+                    <li><a href="css.html">CSS</a></li>
+                    <li><a href="javascript.html">JavaScript</a></li>
+                    <li><a href="database.html" class="active">Databases</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Tutorial Hero -->
+    <section class="tutorial-hero db-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Database Tutorial</h1>
+                <p>Learn to store and manage data efficiently. Master SQL, database design, and work with popular database systems.</p>
+                <div class="hero-meta">
+                    <span class="level">Intermediate/Advanced</span>
+                    <span class="duration">18 Lessons</span>
+                    <span class="time">10 Hours</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorial Content -->
+    <section class="tutorial-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Sidebar Navigation -->
+                <aside class="sidebar">
+                    <div class="sidebar-content">
+                        <h3>Database Lessons</h3>
+                        <ul class="lesson-list">
+                            <li class="completed"><a href="#intro">DB Introduction</a></li>
+                            <li class="completed"><a href="#sql-basics">SQL Basics</a></li>
+                            <li class="active"><a href="#relationships">Database Relationships</a></li>
+                            <li><a href="#normalization">Normalization</a></li>
+                            <li><a href="#joins">SQL Joins</a></li>
+                            <li><a href="#transactions">Transactions</a></li>
+                            <li><a href="#nosql">NoSQL Databases</a></li>
+                        </ul>
+                        
+                        <div class="progress-section">
+                            <h4>Your Progress</h4>
+                            <div class="progress-circle">
+                                <svg width="100" height="100">
+                                    <circle cx="50" cy="50" r="40" stroke="#e9ecef" stroke-width="8" fill="none"></circle>
+                                    <circle cx="50" cy="50" r="40" stroke="#336791" stroke-width="8" fill="none" 
+                                            stroke-dasharray="251.2" stroke-dashoffset="175.84" transform="rotate(-90 50 50)"></circle>
+                                    <text x="50" y="50" text-anchor="middle" dy="7" font-size="20">30%</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    <article id="relationships" class="lesson active">
+                        <h2>Database Relationships</h2>
+                        <p>Understanding relationships between tables is crucial for designing efficient databases. Learn about different types of relationships and how to implement them.</p>
+                        
+                        <h3>Types of Relationships</h3>
+                        
+                        <div class="relationship-types">
+                            <div class="relationship-card">
+                                <h4>One-to-One</h4>
+                                <div class="relationship-visual">
+                                    <div class="table">Users</div>
+                                    <div class="relationship-line"></div>
+                                    <div class="table">Profiles</div>
+                                </div>
+                                <p>Each record in Table A relates to one record in Table B</p>
+                                <div class="code-example small">
+                                    <pre><code>-- One user has one profile
+Users: id, name, email
+Profiles: id, user_id, bio, avatar</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="relationship-card">
+                                <h4>One-to-Many</h4>
+                                <div class="relationship-visual">
+                                    <div class="table">Customers</div>
+                                    <div class="relationship-line many"></div>
+                                    <div class="table">Orders</div>
+                                </div>
+                                <p>One record in Table A relates to many records in Table B</p>
+                                <div class="code-example small">
+                                    <pre><code>-- One customer has many orders
+Customers: id, name, email
+Orders: id, customer_id, amount, date</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="relationship-card">
+                                <h4>Many-to-Many</h4>
+                                <div class="relationship-visual">
+                                    <div class="table">Students</div>
+                                    <div class="relationship-line many-to-many"></div>
+                                    <div class="table junction">Enrollments</div>
+                                    <div class="relationship-line many-to-many"></div>
+                                    <div class="table">Courses</div>
+                                </div>
+                                <p>Many records in Table A relate to many records in Table B</p>
+                                <div class="code-example small">
+                                    <pre><code>-- Students enroll in many courses
+Students: id, name
+Courses: id, title
+Enrollments: student_id, course_id, grade</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Foreign Keys and Constraints</h3>
+                        <div class="code-example">
+                            <pre><code>CREATE TABLE customers (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE
+);
+
+CREATE TABLE orders (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_id INT,
+    amount DECIMAL(10,2),
+    order_date DATE,
+    FOREIGN KEY (customer_id) 
+        REFERENCES customers(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);</code></pre>
+                        </div>
+
+                        <div class="interactive-demo">
+                            <h3>Database Schema Designer</h3>
+                            <div class="schema-designer">
+                                <div class="designer-controls">
+                                    <button id="add-table">Add Table</button>
+                                    <button id="add-relationship">Add Relationship</button>
+                                    <button id="clear-schema">Clear All</button>
+                                </div>
+                                <div class="designer-area" id="designer-area">
+                                    <div class="schema-table" data-table="users">
+                                        <div class="table-header">Users</div>
+                                        <div class="table-fields">
+                                            <div class="field">id (PK)</div>
+                                            <div class="field">name</div>
+                                            <div class="field">email</div>
+                                        </div>
+                                    </div>
+                                    <div class="schema-table" data-table="posts">
+                                        <div class="table-header">Posts</div>
+                                        <div class="table-fields">
+                                            <div class="field">id (PK)</div>
+                                            <div class="field">user_id (FK)</div>
+                                            <div class="field">title</div>
+                                            <div class="field">content</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="schema-code">
+                                    <h4>Generated SQL</h4>
+                                    <pre id="generated-sql"><code>-- Tables will appear here as you design</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="practice-area">
+                            <h3>SQL Playground</h3>
+                            <div class="sql-playground">
+                                <div class="playground-editor">
+                                    <div class="editor-header">
+                                        <span>SQL Editor</span>
+                                        <button id="run-sql">Run Query</button>
+                                    </div>
+                                    <textarea class="code-editor" id="sql-editor">-- Sample database for practice
+CREATE TABLE students (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT
+);
+
+CREATE TABLE courses (
+    id INT PRIMARY KEY,
+    title VARCHAR(100)
+);
+
+CREATE TABLE enrollments (
+    student_id INT,
+    course_id INT,
+    grade CHAR(1),
+    PRIMARY KEY (student_id, course_id),
+    FOREIGN KEY (student_id) REFERENCES students(id),
+    FOREIGN KEY (course_id) REFERENCES courses(id)
+);
+
+-- Insert sample data
+INSERT INTO students VALUES 
+(1, 'Alice Johnson', 20),
+(2, 'Bob Smith', 22),
+(3, 'Carol Davis', 21);
+
+INSERT INTO courses VALUES 
+(1, 'Mathematics'),
+(2, 'Physics'),
+(3, 'Chemistry');
+
+INSERT INTO enrollments VALUES 
+(1, 1, 'A'),
+(1, 2, 'B'),
+(2, 1, 'B'),
+(3, 3, 'A');
+
+-- Try your queries here
+SELECT s.name, c.title, e.grade
+FROM students s
+JOIN enrollments e ON s.id = e.student_id
+JOIN courses c ON e.course_id = c.id
+WHERE e.grade = 'A';</textarea>
+                                </div>
+                                <div class="playground-preview">
+                                    <h4>Query Results</h4>
+                                    <div class="preview-area">
+                                        <div class="results-table" id="sql-results">
+                                            <p>Run a query to see results here</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="exercise-section">
+                            <h3>Practice Exercise</h3>
+                            <div class="exercise">
+                                <p><strong>Scenario:</strong> Design a database for a library system with the following requirements:</p>
+                                <ul>
+                                    <li>Books have title, author, ISBN, and publication year</li>
+                                    <li>Members have name, email, and membership date</li>
+                                    <li>A member can borrow multiple books</li>
+                                    <li>A book can be borrowed by multiple members (at different times)</li>
+                                    <li>Track borrowing date and return date</li>
+                                </ul>
+                                <div class="exercise-hint">
+                                    <button id="show-hint" class="btn btn-secondary">Show Hint</button>
+                                    <div id="hint-content" class="hint-content">
+                                        <p>You'll need 3 tables: books, members, and borrowings. The borrowings table should be a junction table with foreign keys to both books and members.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="navigation-buttons">
+                            <a href="#sql-basics" class="btn btn-secondary">Previous Lesson</a>
+                            <a href="#normalization" class="btn">Next Lesson: Normalization</a>
+                        </div>
+                    </article>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>DevLearn</h3>
+                    <p>Your complete resource for web development tutorials and courses.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="html.html">HTML Tutorial</a></li>
+                        <li><a href="css.html">CSS Tutorial</a></li>
+                        <li><a href="javascript.html">JavaScript Tutorial</a></li>
+                        <li><a href="database.html">Database Tutorial</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 DevLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/database.js"></script>
+</body>
+</html>

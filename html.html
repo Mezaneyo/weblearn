@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tutorial - DevLearn</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/html.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">💻</span>
+                <span>DevLearn</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="html.html" class="active">HTML</a></li>
+                    <li><a href="css.html">CSS</a></li>
+                    <li><a href="javascript.html">JavaScript</a></li>
+                    <li><a href="database.html">Databases</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Tutorial Hero -->
+    <section class="tutorial-hero html-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>HTML Tutorial</h1>
+                <p>Learn the foundation of web development with HTML5. Create structured, semantic, and accessible web pages.</p>
+                <div class="hero-meta">
+                    <span class="level">Beginner</span>
+                    <span class="duration">15 Lessons</span>
+                    <span class="time">8 Hours</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorial Content -->
+    <section class="tutorial-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Sidebar Navigation -->
+                <aside class="sidebar">
+                    <div class="sidebar-content">
+                        <h3>HTML Lessons</h3>
+                        <ul class="lesson-list">
+                            <li class="completed"><a href="#intro">Introduction to HTML</a></li>
+                            <li class="completed"><a href="#basic-tags">Basic HTML Tags</a></li>
+                            <li class="active"><a href="#semantic">Semantic HTML</a></li>
+                            <li><a href="#forms">HTML Forms</a></li>
+                            <li><a href="#multimedia">Multimedia</a></li>
+                            <li><a href="#accessibility">Accessibility</a></li>
+                        </ul>
+                        
+                        <div class="progress-section">
+                            <h4>Your Progress</h4>
+                            <div class="progress-circle">
+                                <svg width="100" height="100">
+                                    <circle cx="50" cy="50" r="40" stroke="#e9ecef" stroke-width="8" fill="none"></circle>
+                                    <circle cx="50" cy="50" r="40" stroke="#e34c26" stroke-width="8" fill="none" 
+                                            stroke-dasharray="251.2" stroke-dashoffset="75.36" transform="rotate(-90 50 50)"></circle>
+                                    <text x="50" y="50" text-anchor="middle" dy="7" font-size="20">70%</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    <article id="semantic" class="lesson active">
+                        <h2>Semantic HTML</h2>
+                        <p>Semantic HTML introduces meaning to the web page rather than just presentation. It makes web content more accessible and SEO-friendly.</p>
+                        
+                        <h3>Why Semantic HTML?</h3>
+                        <ul>
+                            <li>Better accessibility for screen readers</li>
+                            <li>Improved SEO</li>
+                            <li>Easier to maintain and understand</li>
+                            <li>Future-proof your code</li>
+                        </ul>
+
+                        <h3>Common Semantic Elements</h3>
+                        <div class="code-example">
+                            <pre><code>&lt;header&gt;
+    &lt;h1&gt;Website Title&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Article Title&lt;/h2&gt;
+        &lt;p&gt;Article content...&lt;/p&gt;
+    &lt;/article&gt;
+    
+    &lt;aside&gt;
+        &lt;h3&gt;Related Content&lt;/h3&gt;
+        &lt;p&gt;Sidebar content...&lt;/p&gt;
+    &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&copy; 2023 My Website&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+                        </div>
+
+                        <div class="practice-area">
+                            <h3>Try It Yourself</h3>
+                            <div class="editor">
+                                <div class="editor-header">
+                                    <span>HTML Editor</span>
+                                    <button id="run-html">Run</button>
+                                </div>
+                                <textarea class="code-editor" id="html-editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Welcome&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;p&gt;Edit this code to practice semantic HTML!&lt;/p&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                                <div class="editor-preview">
+                                    <h4>Preview</h4>
+                                    <iframe id="html-preview"></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="navigation-buttons">
+                            <a href="#forms" class="btn btn-secondary">Previous Lesson</a>
+                            <a href="#forms" class="btn">Next Lesson: HTML Forms</a>
+                        </div>
+                    </article>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>DevLearn</h3>
+                    <p>Your complete resource for web development tutorials and courses.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="html.html">HTML Tutorial</a></li>
+                        <li><a href="css.html">CSS Tutorial</a></li>
+                        <li><a href="javascript.html">JavaScript Tutorial</a></li>
+                        <li><a href="database.html">Database Tutorial</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 DevLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/html.js"></script>
+</body>
+</html>

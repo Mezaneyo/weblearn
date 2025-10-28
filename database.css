@@ -1,0 +1,315 @@
+/* Database Tutorial Specific Styles */
+.db-hero {
+    background: linear-gradient(135deg, var(--db-color) 0%, #4281b9 100%);
+}
+
+.sidebar h3 {
+    color: var(--db-color);
+}
+
+.lesson-list li.active {
+    background-color: var(--db-color);
+}
+
+.lesson h2 {
+    color: var(--db-color);
+}
+
+.editor-header button {
+    background: var(--db-color);
+}
+
+/* Relationship Types */
+.relationship-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.relationship-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.relationship-card h4 {
+    color: var(--db-color);
+    margin-bottom: 1rem;
+}
+
+.relationship-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    gap: 0.5rem;
+}
+
+.table {
+    background: var(--db-color);
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-width: 80px;
+}
+
+.junction {
+    background: #6c757d;
+}
+
+.relationship-line {
+    width: 40px;
+    height: 2px;
+    background: #6c757d;
+    position: relative;
+}
+
+.relationship-line.many::after {
+    content: "1..*";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.relationship-line.many-to-many::after {
+    content: "*..*";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.code-example.small pre {
+    font-size: 0.8rem;
+    padding: 1rem;
+}
+
+/* Schema Designer */
+.interactive-demo {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.schema-designer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.designer-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.designer-controls button {
+    background: var(--db-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.designer-controls button:hover {
+    background: #2c5d8a;
+    transform: translateY(-2px);
+}
+
+.designer-area {
+    min-height: 300px;
+    background: white;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+}
+
+.schema-table {
+    background: white;
+    border: 2px solid var(--db-color);
+    border-radius: 6px;
+    width: 200px;
+    margin-bottom: 1rem;
+    cursor: move;
+}
+
+.table-header {
+    background: var(--db-color);
+    color: white;
+    padding: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.table-fields {
+    padding: 0.5rem;
+}
+
+.field {
+    padding: 0.3rem 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+}
+
+.field:last-child {
+    border-bottom: none;
+}
+
+.schema-code {
+    background: #2d3748;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.schema-code h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.schema-code pre {
+    margin: 0;
+    color: #e2e8f0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+/* SQL Playground */
+.sql-playground {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.playground-editor {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.playground-preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-area {
+    flex: 1;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.results-table {
+    width: 100%;
+}
+
+.results-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.results-table th,
+.results-table td {
+    border: 1px solid #dee2e6;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.results-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.results-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+/* Exercise Section */
+.exercise-section {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.exercise {
+    margin-bottom: 1.5rem;
+}
+
+.exercise ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.exercise li {
+    margin-bottom: 0.5rem;
+}
+
+.exercise-hint {
+    margin-top: 1.5rem;
+}
+
+.hint-content {
+    display: none;
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    border-left: 4px solid var(--db-color);
+}
+
+.hint-content.show {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .relationship-types {
+        grid-template-columns: 1fr;
+    }
+    
+    .sql-playground {
+        grid-template-columns: 1fr;
+    }
+    
+    .designer-controls {
+        justify-content: center;
+    }
+    
+    .designer-controls button {
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .relationship-visual {
+        flex-direction: column;
+    }
+    
+    .relationship-line {
+        width: 2px;
+        height: 40px;
+    }
+    
+    .relationship-line.many::after,
+    .relationship-line.many-to-many::after {
+        top: 50%;
+        left: -20px;
+        transform: translateY(-50%);
+    }
+}

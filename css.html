@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tutorial - DevLearn</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/css.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">💻</span>
+                <span>DevLearn</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="html.html">HTML</a></li>
+                    <li><a href="css.html" class="active">CSS</a></li>
+                    <li><a href="javascript.html">JavaScript</a></li>
+                    <li><a href="database.html">Databases</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Tutorial Hero -->
+    <section class="tutorial-hero css-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>CSS Tutorial</h1>
+                <p>Master the art of styling web pages. Learn layouts, animations, responsive design, and modern CSS techniques.</p>
+                <div class="hero-meta">
+                    <span class="level">Beginner/Intermediate</span>
+                    <span class="duration">20 Lessons</span>
+                    <span class="time">12 Hours</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorial Content -->
+    <section class="tutorial-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Sidebar Navigation -->
+                <aside class="sidebar">
+                    <div class="sidebar-content">
+                        <h3>CSS Lessons</h3>
+                        <ul class="lesson-list">
+                            <li class="completed"><a href="#intro">CSS Introduction</a></li>
+                            <li class="completed"><a href="#selectors">Selectors</a></li>
+                            <li class="active"><a href="#box-model">Box Model</a></li>
+                            <li><a href="#layout">Layout & Flexbox</a></li>
+                            <li><a href="#grid">CSS Grid</a></li>
+                            <li><a href="#responsive">Responsive Design</a></li>
+                            <li><a href="#animations">Animations</a></li>
+                        </ul>
+                        
+                        <div class="progress-section">
+                            <h4>Your Progress</h4>
+                            <div class="progress-circle">
+                                <svg width="100" height="100">
+                                    <circle cx="50" cy="50" r="40" stroke="#e9ecef" stroke-width="8" fill="none"></circle>
+                                    <circle cx="50" cy="50" r="40" stroke="#264de4" stroke-width="8" fill="none" 
+                                            stroke-dasharray="251.2" stroke-dashoffset="100.48" transform="rotate(-90 50 50)"></circle>
+                                    <text x="50" y="50" text-anchor="middle" dy="7" font-size="20">60%</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    <article id="box-model" class="lesson active">
+                        <h2>CSS Box Model</h2>
+                        <p>The CSS box model is fundamental to understanding how elements are sized and spaced on a web page.</p>
+                        
+                        <h3>Box Model Components</h3>
+                        <div class="visual-demo">
+                            <div class="box-model-visual">
+                                <div class="margin">Margin
+                                    <div class="border">Border
+                                        <div class="padding">Padding
+                                            <div class="content">Content</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-model-labels">
+                                <div class="label-group">
+                                    <span class="label-color margin-color"></span>
+                                    <span>Margin</span>
+                                </div>
+                                <div class="label-group">
+                                    <span class="label-color border-color"></span>
+                                    <span>Border</span>
+                                </div>
+                                <div class="label-group">
+                                    <span class="label-color padding-color"></span>
+                                    <span>Padding</span>
+                                </div>
+                                <div class="label-group">
+                                    <span class="label-color content-color"></span>
+                                    <span>Content</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Box Model Example</h3>
+                        <div class="code-example">
+                            <pre><code>.box {
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border: 5px solid #333;
+    margin: 15px;
+    background-color: #f0f0f0;
+}</code></pre>
+                        </div>
+
+                        <div class="interactive-demo">
+                            <h3>Interactive Box Model</h3>
+                            <div class="demo-controls">
+                                <div class="control-group">
+                                    <label>Width: <span id="width-value">300</span>px</label>
+                                    <input type="range" id="width-slider" min="100" max="500" value="300">
+                                </div>
+                                <div class="control-group">
+                                    <label>Padding: <span id="padding-value">20</span>px</label>
+                                    <input type="range" id="padding-slider" min="0" max="50" value="20">
+                                </div>
+                                <div class="control-group">
+                                    <label>Border: <span id="border-value">5</span>px</label>
+                                    <input type="range" id="border-slider" min="0" max="20" value="5">
+                                </div>
+                                <div class="control-group">
+                                    <label>Margin: <span id="margin-value">15</span>px</label>
+                                    <input type="range" id="margin-slider" min="0" max="50" value="15">
+                                </div>
+                            </div>
+                            <div class="demo-visual">
+                                <div class="interactive-box" id="interactive-box">
+                                    Interactive Box
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="practice-area">
+                            <h3>CSS Playground</h3>
+                            <div class="css-playground">
+                                <div class="playground-editor">
+                                    <div class="editor-header">
+                                        <span>CSS Editor</span>
+                                        <button id="run-css">Apply Styles</button>
+                                    </div>
+                                    <textarea class="code-editor" id="css-editor">.playground-box {
+    width: 200px;
+    height: 150px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.playground-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}</textarea>
+                                </div>
+                                <div class="playground-preview">
+                                    <h4>Preview</h4>
+                                    <div class="preview-area">
+                                        <div class="playground-box" id="playground-box">
+                                            Hover Me!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="navigation-buttons">
+                            <a href="#selectors" class="btn btn-secondary">Previous Lesson</a>
+                            <a href="#layout" class="btn">Next Lesson: Layout & Flexbox</a>
+                        </div>
+                    </article>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>DevLearn</h3>
+                    <p>Your complete resource for web development tutorials and courses.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="html.html">HTML Tutorial</a></li>
+                        <li><a href="css.html">CSS Tutorial</a></li>
+                        <li><a href="javascript.html">JavaScript Tutorial</a></li>
+                        <li><a href="database.html">Database Tutorial</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 DevLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/css.js"></script>
+</body>
+</html>

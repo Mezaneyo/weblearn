@@ -1,0 +1,212 @@
+/* CSS Tutorial Specific Styles */
+.css-hero {
+    background: linear-gradient(135deg, var(--css-color) 0%, #2965f1 100%);
+}
+
+.sidebar h3 {
+    color: var(--css-color);
+}
+
+.lesson-list li.active {
+    background-color: var(--css-color);
+}
+
+.lesson h2 {
+    color: var(--css-color);
+}
+
+.editor-header button {
+    background: var(--css-color);
+}
+
+/* Box Model Visual Demo */
+.visual-demo {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    margin: 2rem 0;
+    align-items: start;
+}
+
+.box-model-visual {
+    position: relative;
+    padding: 2rem;
+}
+
+.margin {
+    background: rgba(255, 193, 7, 0.2);
+    padding: 30px;
+    border: 2px dashed #ffc107;
+    text-align: center;
+}
+
+.border {
+    background: rgba(40, 167, 69, 0.2);
+    padding: 25px;
+    border: 2px solid #28a745;
+}
+
+.padding {
+    background: rgba(0, 123, 255, 0.2);
+    padding: 20px;
+    border: 2px dotted #007bff;
+}
+
+.content {
+    background: rgba(108, 117, 125, 0.2);
+    padding: 50px;
+    border: 1px solid #6c757d;
+    text-align: center;
+}
+
+.box-model-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.label-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.label-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.margin-color {
+    background: #ffc107;
+    border: 2px dashed #ffc107;
+}
+
+.border-color {
+    background: #28a745;
+    border: 2px solid #28a745;
+}
+
+.padding-color {
+    background: #007bff;
+    border: 2px dotted #007bff;
+}
+
+.content-color {
+    background: #6c757d;
+    border: 1px solid #6c757d;
+}
+
+/* Interactive Demo */
+.interactive-demo {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.demo-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.control-group label {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+}
+
+.demo-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.interactive-box {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* CSS Playground */
+.css-playground {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.playground-editor {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.playground-preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-area {
+    flex: 1;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playground-box {
+    width: 200px;
+    height: 150px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.playground-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .visual-demo {
+        grid-template-columns: 1fr;
+    }
+    
+    .css-playground {
+        grid-template-columns: 1fr;
+    }
+    
+    .box-model-labels {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
